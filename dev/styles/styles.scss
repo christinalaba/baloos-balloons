@@ -17,11 +17,11 @@ img{
 }
 
 
-.balloon-enter{
+.balloon-entering{
     opacity: 0.01;
 }
 
-.balloon-enter.balloon-enter-active{
+.balloon-entered{
     opacity: 1;
   transition: opacity 500ms ease-in;
 }
@@ -30,7 +30,7 @@ img{
     opacity: 1;
 }
 
-.balloon-leave.balloon-leave-active{
+.balloon-leaving{
     opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
