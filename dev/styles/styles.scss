@@ -1,0 +1,38 @@
+.canvas{
+    width: 800px;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: pink;
+}
+
+img{
+    width:50px;
+}
+
+.balloon{
+    width: 50px;
+    animation: float 5s linear;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.balloon-enter{
+    opacity: 0.01;
+}
+
+.balloon-enter.balloon-enter-active{
+    opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.balloon-leave{
+    opacity: 1;
+}
+
+.balloon-leave.balloon-leave-active{
+    opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+//  
