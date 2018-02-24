@@ -3,6 +3,7 @@
     height: 100vh;
     margin: 0 auto;
     background-color: pink;
+    position: relative;
 }
 
 img{
@@ -11,28 +12,29 @@ img{
 
 .balloon{
     width: 50px;
-    animation: float 5s linear;
     position: absolute;
-    bottom: 0;
+    animation: float 10s linear;
 }
 
-
-.balloon-entering{
-    opacity: 0.01;
-}
-
-.balloon-entered{
-    opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.balloon-leave{
-    opacity: 1;
-}
 
 .balloon-leaving{
-    opacity: 0.01;
-  transition: opacity 300ms ease-in;
+    display:none;
+    transition: opacity 300ms ease-in;
 }
 
-//  
+    @keyframes float {
+    0% {
+        bottom: 1%;
+    }
+    20%, 40%, 60%, 80% {
+        margin-left: 100px;
+    }
+    10%, 30%, 50%, 70%, 90% {
+        margin-left: 10px;
+    }
+    
+    100% {
+        bottom: 100%;
+        visibility: hidden;
+    }
+}
