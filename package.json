@@ -28,6 +28,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "lodash": "^4.17.5",
     "node-sass": "^4.7.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-transition-group": "^2.2.1"

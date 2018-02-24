@@ -1,28 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Transition from 'react-transition-group/Transition';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import lodash from 'lodash';
+// import Transition from 'react-transition-group/Transition';
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Balloon from './components/balloon';
+import ScoreBoard from './components/scoreboard'
 
-class App extends React.Component {
+
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
+      score: 0,
+      loadReady: false,
     }
+    this.updateScore = this.updateScore.bind(this)
+    this.runApp = this.runApp.bind(this)
+  }
+
+  updateScore() {
+    let newScore = this.state.score + 1;
+    this.setState({
+      score: newScore
+    })
+  }
+
+  runApp() {
+    this.setState ({
+      loadReady: true
+    })
   }
 
   render() {
     return (
       <div>
-        <div className="scoreBoard">
-          <p>Score:</p>
-        </div>
         <div className="canvas">
-          <Balloon />
+          <ScoreBoard score={this.state.score} />
+             
+          { this.state.loadReady === true &&
+            <div>
+            {
+              lodash.times(100, (i) => {
+                return (<Balloon updateScore={this.updateScore} key={i} index={i} />)
+              })
+            }
+            </div>
+          }
+   
         </div>
-        <form>
-          <input type="submit" />
-        </form>
+        <button onClick={this.runApp}>
+          Play
+        </button>
       </div>
     )
   }
