@@ -1,10 +1,28 @@
-.canvas{
-    width: 800px;
-    height: 100vh;
+$background:white;
+$accent:cadetblue;
+
+
+body{
+    font-size: 62.5%;
+     background-color: rgba(95, 158, 160, 0.708);
+     
+}
+
+.wrapper{
+    max-width: 500px;
     margin: 0 auto;
-    background-color: pink;
+}
+
+.gameBoard{
+    width: 95%;
+    min-width: 375px;
+    height: 80vh;
+    margin: 20px auto 15px;
+    background-color: $background;
     position: relative;
     overflow: hidden;
+    border-radius:  50px;
+
 }
 
 img{
@@ -16,12 +34,14 @@ img{
     position: absolute;
     bottom: -150px;
     animation: float 10s linear;
+    // opacity: 1;
 }
 
 
 .balloon-leaving{
     display: none;
-    transition: opacity 300ms ease-in;
+    // opacity:0;
+    // transition: opacity 300ms ease-out;
 }
 
 @keyframes float {
@@ -37,6 +57,60 @@ img{
 
     100% {
         bottom: 100%;
-        visibility: hidden;
     }
 }
+
+.scoreBoard{
+    width: 145px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 30px;
+    
+    p{
+        margin: 0;
+        color:$accent;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        font-family: 'Bungee Inline', cursive;
+    // font-family: 'Baloo', cursive;
+    }
+}
+
+.controls{
+   text-align: center;
+    width: 100%;
+}
+
+
+button{
+   width: 100px;
+   height: 100px;
+   background-color: rgb(29, 65, 65); 
+   border-radius: 50%;
+   color: $background;
+   cursor: pointer;
+   padding: 10px;
+   margin: 0 10px;
+   font-size: 2.5rem;
+   text-transform: uppercase;
+    box-shadow:0 8px 0 white, 0 10px 15px rgba(0,0,0,.35);
+    // transition: bottom 0.3s ease-in-out;
+
+}
+
+button:hover,
+button:focus {
+    color: $accent;
+    box-shadow:0 8px 0 white, 0 7px 10px rgba(0,0,0,.25);
+}
+
+button:active {
+  position: relative;
+  bottom: -3px;
+  box-shadow: 0 4px 0 white, 0 0px 0px rgba(0, 0, 0, 0.35);
+
+}
+

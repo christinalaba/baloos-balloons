@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ScoreBoard extends Component {
+class ScoreBoard extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -9,7 +9,7 @@ class ScoreBoard extends Component {
         return (
             <div className="scoreBoard">
                 <p>Score:
-          <span id="currentScore">{this.props.score}</span>
+                    <span id="currentScore"> {this.props.score}</span>
                 </p>
             </div>
         )

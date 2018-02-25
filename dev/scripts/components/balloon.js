@@ -1,38 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Transition from 'react-transition-group/Transition';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
-class Balloon extends Component {
+class Balloon extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             balloon: true,
-            // balloon_css: '',
             posX: 0,
             index: 0
         }
         this.pop = this.pop.bind(this)
     }
 
+//sets position of ballons being rendred to the page at a random px location
     componentWillMount() {
         this.setState({
-            posX: Math.floor(800 * Math.random())
+            posX: Math.floor(100 * Math.random())
         })
     }
 
-    //this removes balloon
+//this removes balloon
     pop() {
-        // this.setState({
-        //     balloon_css: "balloon-leaving"
-        // }, function() {
-            let balloonElem = document.getElementById('balloon-'+this.props.index)
-            balloonElem.classList.add('balloon-leaving');
+            let balloonElement = document.getElementById('balloon-'+this.props.index)
+            balloonElement.classList.add('balloon-leaving');
             this.props.updateScore();
-        // });
     }
 
+//prevent the page from re-rendring after one baloon is removed from page
     shouldComponentUpdate() {
         return false;
     }
@@ -46,7 +41,7 @@ class Balloon extends Component {
                         alt="Balloon" 
                         className="balloon" 
                         style={{
-                            left: `${this.state.posX}px`,
+                            left: `${this.state.posX}%`,
                             animationDelay: `${Math.floor(20 * Math.random())}s`
                         }}
                     />
