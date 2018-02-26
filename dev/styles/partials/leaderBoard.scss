@@ -2,13 +2,14 @@
     width: 95%;
     min-width: 340px;
     max-width: 400px;
-    height: 80vh;
+    height: 83vh;
     background-color: white;
     border-radius:  50px;
     padding:20px 10px;
     margin: 0 auto;
     text-align: center;
-    
+    overflow: hidden;
+
     ol{
         list-style: none;
         padding: 0;

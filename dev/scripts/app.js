@@ -24,7 +24,6 @@ class App extends React.Component {
     this.runFirebase = this.runFirebase.bind(this)
   }
 
-
 //add one point on pop of baloon  
   addScore() {
     let newScore = this.state.score + 1;
@@ -60,7 +59,7 @@ class App extends React.Component {
     });
   }
 
-  component
+  
 
 
   render() {
@@ -110,13 +109,6 @@ class App extends React.Component {
     )
   }
 }
-
-
-
-
-
-
-
 
 
 ReactDOM.render(<App />, document.getElementById('app'));

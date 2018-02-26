@@ -20,10 +20,12 @@ class Firebase extends React.Component {
             playerNames: [],
             name: "",
             playerScore: 60,
+            topScore: []
         }
         this.handleChange = this.handleChange.bind(this);
         this.addName = this.addName.bind(this);
     }
+    
 
     handleChange(e) {
         // console.log(e.target.value);
@@ -34,33 +36,39 @@ class Firebase extends React.Component {
     
     addName(e) {
         e.preventDefault();
+
+        const scoreStat= {
+            name: this.state.name,
+            score: this.props.score
+        }
+
         const nameState = Array.from(this.state.playerNames);
         nameState.push(this.state.name);
+        
         this.setState({
             playerNames: nameState,
             name: ""
         });
-    }
 
-    
-    handleClick() {
-    //     const dbRef = firebase.database().ref();
-    //     dbRef.push(this.state.userStat;
-    //     this.setState({ userInput: "" })
+        const dbRef = firebase.database().ref();
+        dbRef.push(scoreStat)
+
     }
 
     componentDidMount() {
         firebase.database().ref().on('value', (res) => {
-            console.log(res.val);
+            console.log(res.val());
         })
-}
+    }
 
-    render (){
+
+    render() {
         return(
             <div className="leaderBoard">
                 <p className="gameOver">PARTY'S OVER! </p>
                 
                 <form onSubmit={this.addName}>
+                
                     <p className="score">Your Score: {this.props.score}</p>
                     
                     <div className="join">
@@ -89,3 +97,12 @@ class Firebase extends React.Component {
 
 
 export default Firebase
+
+
+
+
+ // handleClick() {
+    //     const dbRef = firebase.database().ref();
+    //     dbRef.push(this.state.userStat;
+    //     this.setState({ userInput: "" })
+    // }
