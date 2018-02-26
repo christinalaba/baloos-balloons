@@ -15,14 +15,16 @@ body{
 
 .gameBoard{
     width: 95%;
-    min-width: 375px;
+    min-width: 340px;
     height: 80vh;
     margin: 20px auto 15px;
     background-color: $background;
     position: relative;
     overflow: hidden;
     border-radius:  50px;
-
+    cursor: url('./assets/puffy.png')50 50, pointer;
+    // cursor: url('./assets/needle.png'), auto;
+    // cursor: url('../assets/')50 50, pointer;
 }
 
 img{
@@ -49,7 +51,7 @@ img{
         bottom: 1%;
     }
     20%, 40%, 60%, 80% {
-        margin-left: 100px;
+        margin-left: 60px;
     }
     10%, 30%, 50%, 70%, 90% {
         margin-left: 10px;
@@ -74,7 +76,7 @@ img{
         color:$accent;
         text-transform: uppercase;
         font-size: 1.6rem;
-        font-family: 'Bungee Inline', cursive;
+        font-family: 'Bungee Inline', sans-serif;
     // font-family: 'Baloo', cursive;
     }
 }
@@ -96,7 +98,8 @@ button{
    margin: 0 10px;
    font-size: 2.5rem;
    text-transform: uppercase;
-    box-shadow:0 8px 0 white, 0 10px 15px rgba(0,0,0,.35);
+    box-shadow:0 8px 0 #1d4541, 7px 19px 16px rgba(0, 0, 0, 0.35);
+    border:1px solid #31877e;
     // transition: bottom 0.3s ease-in-out;
 
 }
@@ -104,13 +107,22 @@ button{
 button:hover,
 button:focus {
     color: $accent;
-    box-shadow:0 8px 0 white, 0 7px 10px rgba(0,0,0,.25);
+    box-shadow:0 8px 0 #1d4541, 7px 19px 16px rgba(0, 0, 0, 0.35);
 }
 
 button:active {
   position: relative;
   bottom: -3px;
-  box-shadow: 0 4px 0 white, 0 0px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 0 darken($accent, 30%), 0 0px 0px rgba(0, 0, 0, 0.35);
 
 }
 
+
+.leaderBoard{
+    width: 95%;
+    min-width: 340px;
+    max-width: 400px;
+    height: 50vh;
+    background-color: white;
+    border-radius:  50px;
+}
