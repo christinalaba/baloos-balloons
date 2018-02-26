@@ -44,8 +44,7 @@ class Balloon extends React.Component {
                         style={{
                             left: `${this.state.posX}%`,
                             animationDelay: `${Math.floor(20 * Math.random())}s`
-                        }}
-                    />
+                        }} />
                 </div>
             </div>
         )

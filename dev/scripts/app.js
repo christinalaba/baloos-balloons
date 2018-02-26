@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import lodash from 'lodash';
 import Balloon from './components/balloon';
+import Puffy from './components/puffy';
 import ScoreBoard from './components/scoreboard';
 import Firebase from './components/firebase';
 
@@ -33,11 +34,12 @@ class App extends React.Component {
     });
   }
 
-// minus 3 point on click of blowfish
+  // minus 3 point on click of blowfish
   minusScore() {
     console.log("minus");
+    let newScore = this.state.score - 2 ;
     this.setState({
-      score: this.state.score - 3
+      score: newScore
     });
   }
 
@@ -48,50 +50,70 @@ class App extends React.Component {
     });
   }
 
+  replay() {
+      window.location.reload();
+  }
+
   runFirebase() {
     this.setState({
       leaderBoard: true
     });
   }
 
-
-
   render() {
     return (
       <div className="wrapper">
+        
         <div className="gameBoard">
           <ScoreBoard score={this.state.score} />
 
-          {/* if play button is pressed, then balllons will render */}
-          { this.state.loadReady === true &&
-            <div>
-            { 
-              // using lodash library to call the balloon element a set number of times
-              lodash.times(50, (i) => {
-                return (<Balloon addScore={this.addScore} key={i} index={i} />)
-              })
+            { this.state.loadReady === true &&
+              <div>
+                <div>
+                { 
+                  lodash.times(50, (i) => {
+                    return (<Balloon addScore={this.addScore} key={i} index={i} />)
+                  })
+                }
+                </div>
+                
+                <div>
+                  {
+                    lodash.times(10, (i) => {
+                      return (<Puffy minusScore={this.minusScore} key={i} index={i} />)
+                    })
+                  }
+                </div>
+              </div>
             }
-            </div>
-          }
-   
         </div>
         
         <div className="controls">
           <button onClick={this.releaseBalloons}>
             <i className="fas fa-play"></i>
           </button>
-          <button>
+          <button onClick={this.replay}>
             <i className="fas fa-redo-alt"></i>
           </button>
-
-          <Firebase />
         </div>
+        
+        <div>
+          <Firebase />
 
+        </div>
 
         
       </div>
     )
   }
 }
+
+
+
+
+
+
+
+
 
 ReactDOM.render(<App />, document.getElementById('app'));

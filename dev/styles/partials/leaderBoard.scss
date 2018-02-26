@@ -1,0 +1,54 @@
+ .leaderBoard{
+    width: 95%;
+    min-width: 340px;
+    max-width: 400px;
+    height: 80vh;
+    background-color: white;
+    border-radius:  50px;
+    padding:20px 10px;
+    margin: 0 auto;
+    text-align: center;
+    
+    ol{
+        list-style: none;
+        padding: 0;
+    }
+
+}
+
+.gameOver{
+    color: $accent;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: 'Bungee Inline', sans-serif;
+}
+
+.join{
+    input{
+        width: 70%;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        color: $accent;
+    }
+}
+
+
+.addPlayer{
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+}
+
+.poppers{
+    color: $accent;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    border-bottom: 3px dotted green;
+    width: 60%;
+    margin: 40px auto 10px;
+    font-family: 'Bungee Inline', sans-serif;
+}
+
+
+
