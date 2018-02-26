@@ -60,6 +60,9 @@ class App extends React.Component {
     });
   }
 
+  component
+
+
   render() {
     return (
       <div className="wrapper">
@@ -98,7 +101,7 @@ class App extends React.Component {
         </div>
         
         <div>
-          <Firebase />
+          <Firebase score={this.state.score}/>
 
         </div>
 

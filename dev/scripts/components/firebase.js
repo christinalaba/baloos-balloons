@@ -21,7 +21,6 @@ class Firebase extends React.Component {
             name: "",
             playerScore: 60,
         }
-        
         this.handleChange = this.handleChange.bind(this);
         this.addName = this.addName.bind(this);
     }
@@ -46,10 +45,15 @@ class Firebase extends React.Component {
     
     handleClick() {
     //     const dbRef = firebase.database().ref();
-    //     dbRef.push(this.state.userInput);
+    //     dbRef.push(this.state.userStat;
     //     this.setState({ userInput: "" })
     }
 
+    componentDidMount() {
+        firebase.database().ref().on('value', (res) => {
+            console.log(res.val);
+        })
+}
 
     render (){
         return(
@@ -82,24 +86,6 @@ class Firebase extends React.Component {
 }
 
 
-// componentDidMount() {
-//     const dbRef = firebase.database().ref();
-//     dbRef.on('value', (response) => {
-//         console.log(response.val());
-//         const newState = [];
-//         const data = response.val();
 
-//         for (let key in data) {
-//             newState.push(data[key]);
-//         }
-
-//         this.setState({
-//             playerName: newState
-//         });
-
-
-
-//     });
-// }
 
 export default Firebase
