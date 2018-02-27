@@ -1,0 +1,35 @@
+#introScreen{
+    height: 100vh;
+    
+}
+
+.intro{
+    max-width: 600px;
+    min-width: 375px;
+    text-align: center;
+    color: $darkgreen;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    p{
+        margin: 0;
+    }
+    .partyPooper{
+        font-size: 2.5rem;
+    }
+}
+
+.baloo{
+    width: 200px;
+}
+
+
+button{
+    p{
+        margin: 0;
+        font-size: 1.3rem;
+    }
+}

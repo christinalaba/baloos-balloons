@@ -5,9 +5,7 @@ import Balloon from './components/balloon';
 import Puffy from './components/puffy';
 import ScoreBoard from './components/scoreboard';
 import Firebase from './components/firebase';
-
-// import Transition from 'react-transition-group/Transition';
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Intro from './components/intro';
 
 
 class App extends React.Component {
@@ -17,6 +15,7 @@ class App extends React.Component {
       score: 0,
       loadReady: false,
       leaderBoard: false,
+      introScreen: true
     }
     this.addScore = this.addScore.bind(this)
     this.minusScore = this.minusScore.bind(this)
@@ -59,51 +58,57 @@ class App extends React.Component {
     });
   }
 
-  
-
+ 
 
   render() {
     return (
+      
       <div className="wrapper">
+        <div id="introScreen">
+          <Intro />
+        </div>
         
-        <div className="gameBoard">
-          <ScoreBoard score={this.state.score} />
+        <div className="gameScreen">
+          <div className="gameBoard">
+            <ScoreBoard score={this.state.score} />
 
-            { this.state.loadReady === true &&
-              <div>
+              { this.state.loadReady === true &&
                 <div>
-                { 
-                  lodash.times(50, (i) => {
-                    return (<Balloon addScore={this.addScore} key={i} index={i} />)
-                  })
-                }
-                </div>
-                
-                <div>
-                  {
-                    lodash.times(10, (i) => {
-                      return (<Puffy minusScore={this.minusScore} key={i} index={i} />)
+                  <div>
+                  { 
+                    lodash.times(50, (i) => {
+                      return (<Balloon addScore={this.addScore} key={i} index={i} />)
                     })
                   }
+                  </div>
+                  
+                  <div>
+                    {
+                      lodash.times(10, (i) => {
+                        return (<Puffy minusScore={this.minusScore} key={i} index={i} />)
+                      })
+                    }
+                  </div>
                 </div>
-              </div>
-            }
+              }
+          </div>
+        
+          <div className="controls">
+            <button onClick={this.releaseBalloons}>
+              <i className="fas fa-play"></i>
+            </button>
+            <button onClick={this.replay}>
+              <i className="fas fa-redo-alt"></i>
+            </button>
+            <button onClick={this.forward}>
+              <i class="fas fa-forward"></i>
+            </button>
+          </div>
         </div>
         
-        <div className="controls">
-          <button onClick={this.releaseBalloons}>
-            <i className="fas fa-play"></i>
-          </button>
-          <button onClick={this.replay}>
-            <i className="fas fa-redo-alt"></i>
-          </button>
+        <div className="scoreScreen">
+          <Firebase score={this.state.score} />
         </div>
-        
-        <div>
-          <Firebase score={this.state.score}/>
-
-        </div>
-
         
       </div>
     )

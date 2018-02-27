@@ -1,12 +1,15 @@
 @import 'partials/normalise';
 
+
 $background:white;
 $accent:cadetblue;
+$lightgreen:rgba(95, 158, 160, 0.708);
+$darkgreen: #1d4541;
 
 
 body{
     font-size: 62.5%;
-     background-color: rgba(95, 158, 160, 0.708);
+     background-color: $lightgreen;
      font-family: 'Baloo', cursive;
      font-size: 1.6rem;
      
