@@ -17,13 +17,13 @@ class Firebase extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            playerNames: [],
-            name: "",
             topScore: []
+
         }
         this.handleChange = this.handleChange.bind(this);
         this.addName = this.addName.bind(this);
         this.componentDidMount = this.componentDidMount.bind(this);
+        this.topPoppers = this.topPoppers.bind(this);
     }
     
 
@@ -34,6 +34,7 @@ class Firebase extends React.Component {
         });
     }
     
+
     addName(e) {
         e.preventDefault();
 
@@ -42,40 +43,47 @@ class Firebase extends React.Component {
             score: this.props.score
         }
 
-        // const nameState = Array.from(this.state.playerNames);
-        // nameState.push(this.state.name);
-        
-        // this.setState({
-        //     playerNames: nameState,
-        //     name: ""
-        // });
-
         const dbRef = firebase.database().ref();
         dbRef.push(scoreStat)
 
         this.state.name = '';
-        // this.props.score = ''
 
     }
 
+    
     componentDidMount() {
         firebase.database().ref().on('value', (res) => {
             const userData = res.val();
             const dataArray = []
-            console.log(userData)
+            // console.log(userData)
             for (let objectKey in userData) {
                 userData[objectKey].key = objectKey;
                 dataArray.push(userData[objectKey]);
             }
             console.log(dataArray)
+            
             this.setState({
                 topScore: dataArray
-            })
+            }, () => {
+                // console.log(this.renderSorted());
+                this.setState({
+                    topScore : this.topPoppers()
+                })
+            }
+            )
         });
-         
     }
 
 
+    topPoppers() {
+        let sortedScore = this.state.topScore.slice().sort((a, b) => {
+            return a.score < b.score
+        });
+        return sortedScore;
+    }
+
+
+    
     render() {
         return(
             <div className="leaderBoard">
@@ -97,22 +105,17 @@ class Firebase extends React.Component {
 
                 <p className="poppers">Top poppers</p>
                 <ol>
-                    {console.log(this.state.topScore)}
-                    {this.state.topScore.map((name) => {
-                        return <li>{name.name}-{name.score}</li>
+                    {/* {console.log(this.state.topScore)} */}
+                    {this.state.topScore.map((name, i) => {
+                        return <li>{name.name} - {name.score}</li>
                     })}
                 </ol>
                 
             </div>
         )
     }
+   
 }
-
-// {
-//     this.state.playerNames.map((playerName, i) => {
-//         return <li key={`playerName-${i}`}>{playerName}: {this.props.score}</li>
-//     })
-// }
 
 
 export default Firebase
