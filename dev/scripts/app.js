@@ -6,6 +6,7 @@ import Puffy from './components/puffy';
 import ScoreBoard from './components/scoreboard';
 import Firebase from './components/firebase';
 import Intro from './components/intro';
+import Scrollchor from 'react-scrollchor';
 
 
 class App extends React.Component {
@@ -68,7 +69,7 @@ class App extends React.Component {
           <Intro />
         </div>
         
-        <div className="gameScreen">
+        <div id="gameScreen">
           <div className="gameBoard">
             <ScoreBoard score={this.state.score} />
 
@@ -101,15 +102,16 @@ class App extends React.Component {
               <i className="fas fa-redo-alt"></i>
             </button>
             <button onClick={this.forward}>
-              <i class="fas fa-forward"></i>
+              <i className="fas fa-forward"></i>
             </button>
           </div>
         </div>
         
-        <div className="scoreScreen">
+        <div className="scoreScreen" id="scoreScreen">
           <Firebase score={this.state.score} />
         </div>
         
+        <p className="credit">&copy;Christina Laba</p>
       </div>
     )
   }

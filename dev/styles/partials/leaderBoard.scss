@@ -20,9 +20,9 @@
     ol{
         list-style: none;
         padding: 0;
-        li:nth-child(7) {
-            display: none;
-        }
+       li{
+           margin-top: 13px;
+       }
     }
 
     .score{
@@ -68,3 +68,9 @@
     font-family: 'Bungee Inline', sans-serif;
 }
 
+
+.credit{
+    font-size: 1rem;
+    text-align: center;
+    color:$accent;
+}

@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 
 
 class Intro extends React.Component{
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
     }
+
+
     render() {
         return (
             
