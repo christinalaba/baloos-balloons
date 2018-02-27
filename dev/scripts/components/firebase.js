@@ -97,9 +97,10 @@ class Firebase extends React.Component {
 
                 <p className="poppers">Top poppers</p>
                 <ol>
-                    {/* {this.state.topScore.map((name) => {
-                        <li>{name}</li>
-                    })} */}
+                    {console.log(this.state.topScore)}
+                    {this.state.topScore.map((name) => {
+                        return <li>{name.name}-{name.score}</li>
+                    })}
                 </ol>
                 
             </div>
