@@ -19,11 +19,11 @@ class Firebase extends React.Component {
         this.state = {
             playerNames: [],
             name: "",
-            playerScore: 60,
             topScore: []
         }
         this.handleChange = this.handleChange.bind(this);
         this.addName = this.addName.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
     
 
@@ -42,23 +42,37 @@ class Firebase extends React.Component {
             score: this.props.score
         }
 
-        const nameState = Array.from(this.state.playerNames);
-        nameState.push(this.state.name);
+        // const nameState = Array.from(this.state.playerNames);
+        // nameState.push(this.state.name);
         
-        this.setState({
-            playerNames: nameState,
-            name: ""
-        });
+        // this.setState({
+        //     playerNames: nameState,
+        //     name: ""
+        // });
 
         const dbRef = firebase.database().ref();
         dbRef.push(scoreStat)
+
+        this.state.name = '';
+        // this.props.score = ''
 
     }
 
     componentDidMount() {
         firebase.database().ref().on('value', (res) => {
-            console.log(res.val());
-        })
+            const userData = res.val();
+            const dataArray = []
+            console.log(userData)
+            for (let objectKey in userData) {
+                userData[objectKey].key = objectKey;
+                dataArray.push(userData[objectKey]);
+            }
+            console.log(dataArray)
+            this.setState({
+                topScore: dataArray
+            })
+        });
+         
     }
 
 
@@ -83,9 +97,9 @@ class Firebase extends React.Component {
 
                 <p className="poppers">Top poppers</p>
                 <ol>
-                    {this.state.playerNames.map((playerName, i) =>{
-                        return <li key={`playerName-${i}`}>{playerName}: {this.props.score}</li>
-                    })}
+                    {/* {this.state.topScore.map((name) => {
+                        <li>{name}</li>
+                    })} */}
                 </ol>
                 
             </div>
@@ -93,7 +107,11 @@ class Firebase extends React.Component {
     }
 }
 
-
+// {
+//     this.state.playerNames.map((playerName, i) => {
+//         return <li key={`playerName-${i}`}>{playerName}: {this.props.score}</li>
+//     })
+// }
 
 
 export default Firebase
