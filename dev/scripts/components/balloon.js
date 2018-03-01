@@ -24,6 +24,7 @@ class Balloon extends React.Component {
     pop() {
             let balloonElement = document.getElementById('balloon-'+this.props.index)
             balloonElement.classList.add('balloon-leaving');
+            
             this.props.addScore();
     }
 
@@ -38,7 +39,7 @@ class Balloon extends React.Component {
             <div id={`balloon-${this.props.index}`}>
                 <div onClick={this.pop}>
                     <img 
-                        src="/dev/assets/balloon.png" 
+                        src="./dev/assets/balloon.png" 
                         alt="Balloon" 
                         className="balloon" 
                         style={{

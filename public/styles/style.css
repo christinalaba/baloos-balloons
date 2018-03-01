@@ -1,0 +1,316 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden] {
+  display: none; }
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:active, a:hover {
+  outline: 0; }
+
+h1 {
+  font-size: 2em; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: 700; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: \201C \201D \2018 \2019; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -.5em; }
+
+sub {
+  bottom: -.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0; }
+
+button, input {
+  line-height: normal; }
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], input[disabled] {
+  cursor: default; }
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body, figure {
+  margin: 0; }
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '';
+  clear: both;
+  height: 0; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 62.5%;
+  background-color: rgba(95, 158, 160, 0.708);
+  font-family: 'Baloo', cursive;
+  font-size: 1.6rem; }
+
+.wrapper {
+  max-width: 500px;
+  margin: 0 auto; }
+
+#introScreen {
+  height: 100vh; }
+
+.intro {
+  max-width: 600px;
+  min-width: 375px;
+  text-align: center;
+  color: #1d4541;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  .intro p {
+    margin: 0; }
+  .intro .partyPooper {
+    font-size: 2.5rem; }
+
+.baloo {
+  width: 200px; }
+
+button p {
+  margin: 0;
+  font-size: 1.3rem; }
+
+.gameScreen {
+  height: 100vh; }
+
+.gameBoard {
+  width: 95%;
+  min-width: 340px;
+  height: 80vh;
+  margin: 20px auto 15px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+  background-image: url("../../dev/assets/geometry.png");
+  background-repeat: repeat;
+  cursor: url("./assets/fightCat.png") 20 20, auto;
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.35); }
+
+img {
+  width: 50px; }
+
+.balloon {
+  width: 50px;
+  position: absolute;
+  bottom: -150px;
+  animation: float 10s linear; }
+
+.puffy {
+  width: 50px;
+  position: absolute;
+  bottom: -150px;
+  animation: float 10s linear; }
+
+.balloon-leaving {
+  display: none; }
+
+@keyframes float {
+  0% {
+    bottom: 1%; }
+  20%, 40%, 60%, 80% {
+    margin-left: 60px; }
+  10%, 30%, 50%, 70%, 90% {
+    margin-left: 10px; }
+  100% {
+    bottom: 100%; } }
+
+.scoreBoard {
+  width: 145px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 30px; }
+  .scoreBoard p {
+    margin: 0;
+    color: cadetblue;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-family: 'Bungee Inline', sans-serif; }
+
+.controls {
+  text-align: center;
+  width: 100%; }
+
+button {
+  width: 100px;
+  height: 100px;
+  background-color: #1d4141;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 10px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  box-shadow: 0 8px 0 #1d4541, 0px 19px 16px rgba(0, 0, 0, 0.35);
+  border: 1px solid #31877e;
+  transition: color 0.3s ease-in-out; }
+
+button:hover,
+button:focus {
+  color: cadetblue;
+  box-shadow: 0 8px 0 #1d4541, 3px 19px 16px rgba(0, 0, 0, 0.35); }
+
+button:active {
+  position: relative;
+  bottom: -3px;
+  box-shadow: 0 4px 0 #263f40, 0 0px 0px rgba(0, 0, 0, 0.35); }
+
+.scoreScreen {
+  height: 100vh; }
+
+.leaderBoard {
+  width: 90%;
+  min-width: 340px;
+  max-width: 400px;
+  height: 90vh;
+  background-color: white;
+  border-radius: 50px;
+  padding: 20px 10px;
+  margin: 5vh auto;
+  text-align: center;
+  overflow: scroll;
+  background-image: url("../../dev/assets/geometry.png");
+  background-repeat: repeat;
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.35); }
+  .leaderBoard ol {
+    list-style: none;
+    padding: 0; }
+    .leaderBoard ol li {
+      margin-top: 13px; }
+  .leaderBoard .score {
+    margin: 0;
+    color: salmon;
+    font-size: 2rem; }
+
+.gameOver {
+  color: cadetblue;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: 'Bungee Inline', sans-serif; }
+
+.join input {
+  width: 70%;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  color: cadetblue; }
+
+.addPlayer {
+  width: 60px;
+  height: 60px;
+  font-size: 1.2rem; }
+
+.poppers {
+  color: cadetblue;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  border-bottom: 3px dotted #1d4541;
+  width: 65%;
+  margin: 40px auto 10px;
+  font-family: 'Bungee Inline', sans-serif; }
+
+.credit {
+  font-size: 1rem;
+  text-align: center;
+  color: cadetblue; }
