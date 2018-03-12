@@ -12,8 +12,6 @@ class Intro extends React.Component{
     }
 
     closeIntro() {
-        let introPopup = document.getElementById('gameInstruction')
-        introPopup.classList.toggle('hide');
         this.setState({
             introScreen: false
         });
@@ -22,14 +20,16 @@ class Intro extends React.Component{
     render() {
         return (
             
-            <div className="intro" id="gameInstruction">
+            <div className={this.state.introScreen ? `intro` : `intro hide`} id="gameInstruction">
                 <div className="introTextBlock">
                     <p className="partyPooper">This is Baloo.</p>
                     <img className="baloo" src="../../../public/assets/if_cat_fight_512p.png" alt="fight cat"/>
                     <p> He's a party pooper. Help him ruin this party by popping as many balloons as you can!</p>
-                <button onClick={this.closeIntro} className="closeButton">
-                    <i class="fas fa-times"></i>
-                </button>
+                    <div className="positionCloseButton">
+                        <button onClick={this.closeIntro} className="closeButton">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         )

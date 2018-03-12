@@ -9,7 +9,8 @@ $darkgreen: #1d4541;
 
 body{
     font-size: 62.5%;
-     background-color: $lightgreen;
+    //  background-color: $lightgreen;
+    background: linear-gradient(rgba(141, 186, 187, 0.6), rgba(141, 186, 187, 0.6)), url('../../public/assets/diamond_upholstery.png');
      font-family: 'Baloo', cursive;
      font-size: 1.6rem;
      

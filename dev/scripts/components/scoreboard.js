@@ -1,9 +1,10 @@
 import React from 'react';
 
 
-class ScoreBoard extends React.Component {
+class Scoreboard extends React.Component {
     constructor(props) {
         super(props)
+        
     }
 
     render() {
@@ -17,4 +18,4 @@ class ScoreBoard extends React.Component {
     }
 }
 
-export default ScoreBoard 
+export default Scoreboard 

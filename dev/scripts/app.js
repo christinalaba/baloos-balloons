@@ -7,6 +7,7 @@ import ScoreBoard from './components/scoreboard';
 import Firebase from './components/firebase';
 import Intro from './components/intro';
 import Scrollchor from 'react-scrollchor';
+import Timer from './components/timer';
 
 
 class App extends React.Component {
@@ -16,6 +17,7 @@ class App extends React.Component {
       score: 0,
       loadReady: false,
       leaderBoard: false,
+      timer: 0
     }
     this.addScore = this.addScore.bind(this)
     this.minusScore = this.minusScore.bind(this)
@@ -26,7 +28,6 @@ class App extends React.Component {
 //add one point on pop of baloon  
   addScore() {
     let newScore = this.state.score + 1;
-    // console.log(newScore);
     this.setState({
       score: newScore
     });
@@ -48,9 +49,11 @@ class App extends React.Component {
     });
   }
 
+//replay button
   replay() {
       window.location.reload();
   }
+
 
   runFirebase() {
     this.setState({
@@ -67,10 +70,15 @@ class App extends React.Component {
         <div id="introScreen">
           <Intro />
         </div>
+            
+        <div>
+          <Timer time={this.state.seconds} />
+        </div>
         
         <div id="gameScreen">
+          
           <div className="gameBoard">
-            <ScoreBoard score={this.state.score} />
+            <ScoreBoard score={this.state.score} timer={this.state.timer} />
 
               { this.state.loadReady === true &&
                 <div>
@@ -100,15 +108,16 @@ class App extends React.Component {
             <button onClick={this.replay}>
               <i className="fas fa-redo-alt"></i>
             </button>
-            <button onClick={this.forward}>
+            {/* <button onClick={this.forward}>
               <i className="fas fa-forward"></i>
-            </button>
+            </button> */}
           </div>
         </div>
-        
+
         <div className="scoreScreen" id="scoreScreen">
           <Firebase score={this.state.score} />
         </div>
+
         
         <p className="credit">&copy;Christina Laba</p>
       </div>

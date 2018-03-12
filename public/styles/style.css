@@ -133,7 +133,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 body {
   font-size: 62.5%;
-  background-color: rgba(95, 158, 160, 0.708);
+  background: linear-gradient(rgba(141, 186, 187, 0.6), rgba(141, 186, 187, 0.6)), url("../../public/assets/diamond_upholstery.png");
   font-family: 'Baloo', cursive;
   font-size: 1.6rem; }
 
@@ -150,13 +150,14 @@ body {
   width: 100vh;
   z-index: 9; }
   .intro .introTextBlock {
-    border: 15px solid white;
+    border: 15px solid rgba(255, 255, 255, 0.5);
     border-radius: 50px;
-    background-color: #8dbabb;
+    background: linear-gradient(rgba(141, 186, 187, 0.6), rgba(141, 186, 187, 0.6)), url("../../public/assets/diamond_upholstery.png");
     padding: 30px;
     position: relative;
     left: -16%;
-    top: 9%; }
+    top: 9%;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
     .intro .introTextBlock p {
       margin: 0; }
     .intro .introTextBlock .partyPooper {
@@ -167,13 +168,23 @@ body {
 
 button.closeButton {
   width: 50px;
-  height: 50px; }
+  height: 50px;
+  box-shadow: 0 5px 0 #1d4541, 0px 19px 16px rgba(0, 0, 0, 0.35); }
+  button.closeButton:hover {
+    box-shadow: 0 5px 0 #1d4541, 0px 19px 16px rgba(0, 0, 0, 0.35); }
+  button.closeButton:active {
+    box-shadow: 0 0px 0 #1d4541, 0px 19px 16px rgba(0, 0, 0, 0.35); }
   button.closeButton .fa-times {
     margin-bottom: 20px;
     font-size: 1.3rem; }
 
 .hide {
   display: none; }
+
+.positionCloseButton {
+  position: absolute;
+  top: 15px;
+  right: 10px; }
 
 .gameScreen {
   height: 100vh; }
@@ -263,6 +274,17 @@ button:active {
   position: relative;
   bottom: -3px;
   box-shadow: 0 4px 0 #263f40, 0 0px 0px rgba(0, 0, 0, 0.35); }
+
+.countdown {
+  text-align: center;
+  color: salmon;
+  font-size: 4rem;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 10%;
+  width: 100%; }
 
 .scoreScreen {
   height: 100vh; }

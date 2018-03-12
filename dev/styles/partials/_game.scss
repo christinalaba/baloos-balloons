@@ -108,3 +108,15 @@ button:active {
   bottom: -3px;
   box-shadow: 0 4px 0 darken($accent, 30%), 0 0px 0px rgba(0, 0, 0, 0.35);
 }
+
+.countdown{
+    text-align: center;
+    color: rgb(250, 128, 114);
+    font-size: 4rem;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 10%;
+    width: 100%;
+}
