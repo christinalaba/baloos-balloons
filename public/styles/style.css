@@ -141,31 +141,39 @@ body {
   max-width: 500px;
   margin: 0 auto; }
 
-#introScreen {
-  height: 100vh; }
-
 .intro {
-  max-width: 600px;
   min-width: 375px;
   text-align: center;
   color: #1d4541;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-  .intro p {
-    margin: 0; }
-  .intro .partyPooper {
-    font-size: 2.5rem; }
+  height: 100vh;
+  width: 100vh;
+  z-index: 9; }
+  .intro .introTextBlock {
+    border: 15px solid white;
+    border-radius: 50px;
+    background-color: #8dbabb;
+    padding: 30px;
+    position: relative;
+    left: -16%;
+    top: 9%; }
+    .intro .introTextBlock p {
+      margin: 0; }
+    .intro .introTextBlock .partyPooper {
+      font-size: 2.5rem; }
 
 .baloo {
   width: 200px; }
 
-button p {
-  margin: 0;
-  font-size: 1.3rem; }
+button.closeButton {
+  width: 50px;
+  height: 50px; }
+  button.closeButton .fa-times {
+    margin-bottom: 20px;
+    font-size: 1.3rem; }
+
+.hide {
+  display: none; }
 
 .gameScreen {
   height: 100vh; }
@@ -179,9 +187,9 @@ button p {
   position: relative;
   overflow: hidden;
   border-radius: 50px;
-  background-image: url("../../dev/assets/geometry.png");
+  background-image: url("../../public/assets/geometry.png");
   background-repeat: repeat;
-  cursor: url("./assets/fightCat.png") 20 20, auto;
+  cursor: url("../../../public/assets/if_cat_fight_64p.png") 20 20, auto;
   box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.35); }
 
 img {
@@ -270,7 +278,7 @@ button:active {
   margin: 5vh auto;
   text-align: center;
   overflow: scroll;
-  background-image: url("../../dev/assets/geometry.png");
+  background-image: url("../../public/assets/geometry.png");
   background-repeat: repeat;
   box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.35); }
   .leaderBoard ol {

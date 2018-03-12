@@ -16,7 +16,6 @@ class App extends React.Component {
       score: 0,
       loadReady: false,
       leaderBoard: false,
-      introScreen: true
     }
     this.addScore = this.addScore.bind(this)
     this.minusScore = this.minusScore.bind(this)

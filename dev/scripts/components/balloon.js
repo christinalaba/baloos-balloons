@@ -39,7 +39,7 @@ class Balloon extends React.Component {
             <div id={`balloon-${this.props.index}`}>
                 <div onClick={this.pop}>
                     <img 
-                        src="./dev/assets/balloon.png" 
+                        src="./public/assets/balloon.png" 
                         alt="Balloon" 
                         className="balloon" 
                         style={{
