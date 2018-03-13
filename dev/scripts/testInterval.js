@@ -1,14 +1,14 @@
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            callback: this.inc1,
-            destroy: false,
-            enabled: false,
-            timeout: 200,
-            count: 0
-        };
-    }
+// class App extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             callback: this.inc1,
+//             destroy: false,
+//             enabled: false,
+//             timeout: 200,
+//             count: 0
+//         };
+//     }
 
 
     onChangeTimeout = ({ target: { value } }) => {

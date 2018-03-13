@@ -24,6 +24,7 @@ class Firebase extends React.Component {
         this.addName = this.addName.bind(this);
         this.componentDidMount = this.componentDidMount.bind(this);
         this.topPoppers = this.topPoppers.bind(this);
+        this.replay = this.replay.bind(this);
     }
     
 
@@ -83,7 +84,11 @@ class Firebase extends React.Component {
     }
 
 
-    
+    //replay button
+    replay() {
+        window.location.reload();
+    }
+
     render() {
         return(
             <div className="leaderBoard">
@@ -100,6 +105,9 @@ class Firebase extends React.Component {
 
                     <button className="addPlayer">
                         <p className ="fas fa-plus"></p>
+                    </button>
+                    <button className="replayGame" onClick={this.replay}>
+                        <i className="fas fa-redo-alt"></i>
                     </button>
                 </form>
 

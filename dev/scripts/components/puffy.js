@@ -40,7 +40,7 @@ class Puffy extends React.Component {
                         className="puffy"
                         style={{
                             left: `${this.state.posX}%`,
-                            animationDelay: `${Math.floor(20 * Math.random())}s`
+                            animationDelay: `${Math.floor(7 * Math.random())}s`
                         }} />
                 </div>
             </div>

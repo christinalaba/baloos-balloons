@@ -1,16 +1,22 @@
  .scoreScreen{
-     height: 100vh;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
  }
  
  .leaderBoard{
     width: 90%;
     min-width: 340px;
     max-width: 400px;
-    height: 90vh;
+    height: 95vh;
     background-color: white;
     border-radius:  50px;
     padding:20px 10px;
-    margin: 5vh auto;
+    margin: 20px auto;
     text-align: center;
     overflow: scroll;
     background-image: url('../../public/assets/geometry.png');
@@ -52,11 +58,13 @@
 }
 
 
-.addPlayer{
+.addPlayer, .replayGame{
     width: 60px;
     height: 60px;
     font-size: 1.2rem;
 }
+
+
 
 .poppers{
     color: $accent;

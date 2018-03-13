@@ -17,12 +17,14 @@ class App extends React.Component {
       score: 0,
       loadReady: false,
       leaderBoard: false,
-      timer: 0
+      timer: 0,
+      timerReady: false
     }
     this.addScore = this.addScore.bind(this)
     this.minusScore = this.minusScore.bind(this)
     this.releaseBalloons = this.releaseBalloons.bind(this)
-    this.runFirebase = this.runFirebase.bind(this)
+    // this.runFirebase = this.runFirebase.bind(this)
+    this.enterLeaderboard = this.enterLeaderboard.bind(this)
   }
 
 //add one point on pop of baloon  
@@ -45,22 +47,18 @@ class App extends React.Component {
 //function runs when play button is pressed 
   releaseBalloons() {
     this.setState ({
-      loadReady: true
+      loadReady: true,
+      timerReady: true
     });
   }
 
-//replay button
-  replay() {
-      window.location.reload();
-  }
 
 
-  runFirebase() {
+  enterLeaderboard(){
     this.setState({
       leaderBoard: true
     });
   }
-
  
 
   render() {
@@ -71,10 +69,15 @@ class App extends React.Component {
           <Intro />
         </div>
             
+
+        {this.state.timerReady ?  
         <div>
           <Timer time={this.state.seconds} />
         </div>
-        
+        :
+        null
+        }
+
         <div id="gameScreen">
           
           <div className="gameBoard">
@@ -105,19 +108,23 @@ class App extends React.Component {
             <button onClick={this.releaseBalloons}>
               <i className="fas fa-play"></i>
             </button>
-            <button onClick={this.replay}>
-              <i className="fas fa-redo-alt"></i>
+            
+            <button onClick={this.enterLeaderboard}>
+              <i className="fas fa-trophy"></i>
             </button>
-            {/* <button onClick={this.forward}>
-              <i className="fas fa-forward"></i>
-            </button> */}
+
+            {this.state.leaderBoard ?
+              <div>
+                <div className="scoreScreen" id="scoreScreen">
+                  <Firebase score={this.state.score} />
+                </div>
+              </div>
+              :
+              null
+            }
+
           </div>
         </div>
-
-        <div className="scoreScreen" id="scoreScreen">
-          <Firebase score={this.state.score} />
-        </div>
-
         
         <p className="credit">&copy;Christina Laba</p>
       </div>

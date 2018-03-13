@@ -6,8 +6,7 @@ class Timer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            seconds: 28,
-            count: 28,
+            seconds: 15,
             enabled: false,
             timeout:0
         }
@@ -17,23 +16,15 @@ class Timer extends React.Component {
         return (
             
             <div>
-                
                 <div>
-                    
-                    {/* {this.state.loadReady === true ? */}
-
                     <ReactInterval timeout={1000} enabled={true}
-                        callback={() => this.setState({ count: this.state.count - 1 })} />
-            
+                        callback={() => this.setState({ seconds: this.state.seconds - 1 })} />
                 </div>
                 
                 <div>
-                    <p className="countdown">{this.state.count}</p>
+                    <p className="countdown">{this.state.seconds}</p>
                 </div>
 
-                {/* <button onClick={() => this.setState({ enabled: true })}>
-                Start</button> */}
-      
             </div>
 
         )
