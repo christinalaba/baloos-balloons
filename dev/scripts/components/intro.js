@@ -23,7 +23,7 @@ class Intro extends React.Component{
             <div className={this.state.introScreen ? `intro` : `intro hide`} id="gameInstruction">
                 <div className="introTextBlock">
                     <p className="partyPooper">This is Baloo.</p>
-                    <img className="baloo" src="../../../public/assets/if_cat_fight_512p.png" alt="fight cat"/>
+                    <img className="baloo" src="./public/assets/if_cat_fight_512p.png" alt="fight cat"/>
                     <p> He's a party pooper. Help him ruin this party by popping as many balloons as you can!</p>
                     <div className="positionCloseButton">
                         <button onClick={this.closeIntro} className="closeButton">
