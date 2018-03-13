@@ -8,7 +8,7 @@ class Timer extends React.Component {
         this.state = {
             seconds: 15,
             enabled: false,
-            timeout:0
+            // timeout:0
         }
     }
 
@@ -21,10 +21,18 @@ class Timer extends React.Component {
                         callback={() => this.setState({ seconds: this.state.seconds - 1 })} />
                 </div>
                 
+
+                {this.state.seconds > 0 ? 
                 <div>
                     <p className="countdown">{this.state.seconds}</p>
                 </div>
-
+                :
+                <div className="game-over-container">
+                    <p className="gameOver">PARTY'S OVER! <br/> Click <i className="fas fa-trophy"></i> to join the leaderboard</p>
+                </div>
+                
+                }
+                
             </div>
 
         )

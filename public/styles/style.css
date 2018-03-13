@@ -287,6 +287,19 @@ button:active {
   top: 10%;
   width: 100%; }
 
+.game-over-container {
+  position: relative; }
+  .game-over-container .gameOver {
+    color: cadetblue;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: 'Bungee Inline', sans-serif;
+    text-align: center;
+    position: absolute;
+    top: 25vh;
+    right: 0;
+    z-index: 1; }
+
 .scoreScreen {
   height: 100vh;
   width: 100%;
@@ -294,7 +307,8 @@ button:active {
   top: 0;
   left: 0;
   right: 0;
-  margin: 0 auto; }
+  margin: 0 auto;
+  z-index: 1; }
 
 .leaderBoard {
   width: 90%;
@@ -319,12 +333,6 @@ button:active {
     margin: 0;
     color: salmon;
     font-size: 2rem; }
-
-.gameOver {
-  color: cadetblue;
-  text-transform: uppercase;
-  font-size: 2rem;
-  font-family: 'Bungee Inline', sans-serif; }
 
 .join input {
   width: 70%;

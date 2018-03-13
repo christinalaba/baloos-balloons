@@ -92,7 +92,7 @@ class Firebase extends React.Component {
     render() {
         return(
             <div className="leaderBoard">
-                <p className="gameOver">PARTY'S OVER! </p>
+                {/* <p className="gameOver">PARTY'S OVER! </p> */}
                 
                 <form onSubmit={this.addName}>
                 
@@ -113,7 +113,6 @@ class Firebase extends React.Component {
 
                 <p className="poppers">Top poppers</p>
                 <ol>
-                    {/* {console.log(this.state.topScore)} */}
                     {this.state.topScore.map((name, i) => {
                         return <li>{name.name} - {name.score}</li>
                     })}

@@ -35,7 +35,7 @@ class Puffy extends React.Component {
             <div id={`puffy-${this.props.index}`}>
                 <div onClick={this.ouch}>
                     <img
-                        src="./dev/assets/puffy.png"
+                        src="./public/assets/puffy.png"
                         alt="blow fish"
                         className="puffy"
                         style={{

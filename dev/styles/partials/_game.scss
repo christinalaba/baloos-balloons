@@ -123,3 +123,18 @@ button:active {
     top: 10%;
     width: 100%;
 }
+
+.game-over-container{
+    position: relative;
+    .gameOver{
+        color: $accent;
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-family: 'Bungee Inline', sans-serif;
+        text-align: center;
+        position: absolute;
+        top: 25vh;
+        right: 0;
+        z-index: 1;
+    }
+}

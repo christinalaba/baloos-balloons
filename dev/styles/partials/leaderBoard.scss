@@ -6,6 +6,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+    z-index: 1;
  }
  
  .leaderBoard{
@@ -40,12 +41,12 @@
 
 }
 
-.gameOver{
-    color: $accent;
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-family: 'Bungee Inline', sans-serif;
-}
+// .gameOver{
+//     color: $accent;
+//     text-transform: uppercase;
+//     font-size: 2rem;
+//     font-family: 'Bungee Inline', sans-serif;
+// }
 
 .join{
     input{
